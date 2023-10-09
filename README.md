@@ -21,20 +21,19 @@
 
    - Copy the "Client ID" and "Client Secret" from your Spotify application settings.
 
-3. **Inserting Spotify Login Credentials into the Code:**
+3. **Inserting Spotify Login Credentials into the config.ini:**
 
    - Open the SpotLinkVR code.
 
    - Locate the section with Spotify API configuration:
 
-     ```python
-     # Spotify API Configuration
-     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-         client_id='YOUR_SPOTIFY_CLIENT_ID',
-         client_secret='YOUR_SPOTIFY_CLIENT_SECRET',
-         redirect_uri='http://localhost:8092/callback',
-         scope='user-read-playback-state user-read-currently-playing'
-     ))
+     ```ini
+     [Spotify]
+     client_id = YOUR_SPOTIFY_CLIENT_ID
+     client_secret = YOUR_SPOTIFY_CLIENT_SECRET
+     redirect_uri = http://localhost:8092/callback
+     scope = user-read-playback-state user-modify-playback-state user-read-currently-playing
+
      ```
 
    - Replace `'YOUR_SPOTIFY_CLIENT_ID'` with your actual Spotify Client ID and `'YOUR_SPOTIFY_CLIENT_SECRET'` with your Client Secret.
